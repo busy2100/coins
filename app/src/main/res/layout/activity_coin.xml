@@ -1,44 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
     <LinearLayout
+        android:id="@+id/toplinearlayoutwhereiconis"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearlayoutone">
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/coinActivityTopLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bitcoin_logo"
-        android:layout_gravity="center"
-       />
+        <ImageView
+            android:id="@+id/coinActivityTopLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/bitcoin_logo" />
 
-    <TextView
-        android:id="@+id/coinActivityTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="BitCoin"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/coinActivityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="BitCoin"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"/>
 
 
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/coinActivityPrice"
-        tools:text="$1,000"
-        android:layout_weight="1"
-        android:textSize="30dp"
-        android:textAlignment="center"
-        android:layout_gravity="center"
-        />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/coinActivityPrice"
+            tools:text="$1,000"
+            android:layout_weight="1"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            />
 
         <TextView
             android:layout_width="0dp"
@@ -49,64 +48,64 @@
             android:layout_weight="1"
             android:textAlignment="center"
             android:layout_gravity="center"/>
-
     </LinearLayout>
 
 
-
-
-    <android.support.v7.widget.RecyclerView
+    <ListView
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/linearlayoutone"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/recyclerviewchat"
-        android:layout_above="@+id/edittextone"
-        >
-
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_above="@id/emojibuttonlinearlayoutid"
+        android:layout_below="@id/toplinearlayoutwhereiconis"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"/>
 
     <LinearLayout
+        android:id="@+id/emojibuttonlinearlayoutid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/recyclerviewchat">
+        android:layout_above="@id/edittextone">
 
-    <Button
-        android:id="@+id/moonbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🚀🌙"
-        style="@style/emojibuttons"
-        />
+        <Button
+            android:id="@+id/moonbutton"
+            style="@style/emojibuttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🚀🌙" />
 
 
         <Button
+            android:id="@+id/hodlbutton"
+            style="@style/emojibuttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="⚓️"
-            style="@style/emojibuttons"
-            android:id="@+id/hodlbutton"
-            />
+            android:text="⚓️" />
 
         <Button
             android:id="@+id/praybutton"
+            style="@style/emojibuttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🙏"
-            style="@style/emojibuttons"
-            />
+            android:text="🙏" />
 
         <Button
+            android:id="@+id/profitbutton"
+            style="@style/emojibuttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🤑"
-            android:id="@+id/profitbutton"
-
-            style="@style/emojibuttons"
-            />
+            android:text="🤑" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Send"
+
+        />
 
     <EditText
         android:id="@+id/edittextone"
@@ -114,8 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        />
-
+        android:layout_toLeftOf="@id/submit_button" />
 
 
 </RelativeLayout>

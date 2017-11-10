@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "162433636245",
+    "firebase_url": "https://coins-76c7d.firebaseio.com",
+    "project_id": "coins-76c7d",
+    "storage_bucket": "coins-76c7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162433636245:android:d3c3ee2b04826dc7",
+        "android_client_info": {
+          "package_name": "com.example.button.webcoursesbangkok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162433636245-n0g38bl8bql6h1j3ubmsgueksof5gusm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.button.webcoursesbangkok",
+            "certificate_hash": "ad8cb7f626c5f86e989c9df00f314408d062af1c"
+          }
+        },
+        {
+          "client_id": "162433636245-l2rq1on8qn7sgh3a9aq565fvnml9cdrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZG3H3YColvTbQnXO0IsifwmAcAkteu50"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162433636245-l2rq1on8qn7sgh3a9aq565fvnml9cdrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

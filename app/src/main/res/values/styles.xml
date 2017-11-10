@@ -8,8 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="emojibuttons"
-        >
-        <item name="android:textSize">100sp</item>
+    <style name="emojibuttons">
+        <item name="android:textSize">40sp</item>
     </style>
 </resources>

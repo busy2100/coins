@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements MyClickListener {
         setContentView(R.layout.activity_main);
         getCurrenciesFromInternet();
 
+
+
     }
 
 
