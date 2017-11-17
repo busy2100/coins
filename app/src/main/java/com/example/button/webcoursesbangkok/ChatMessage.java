@@ -6,11 +6,13 @@ public class ChatMessage {
 
     private String messageText;
     private String messageUser;
+    private String channel;
     private long messageTime;
 
-    public ChatMessage(String messageText, String messageUser) {
+    public ChatMessage(String messageText, String messageUser, String channel) {
         this.messageText = messageText;
         this.messageUser = messageUser;
+        this.channel = channel;
 
         // Initialize to current time
         messageTime = new Date().getTime();
@@ -42,5 +44,14 @@ public class ChatMessage {
 
     public void setMessageTime(long messageTime) {
         this.messageTime = messageTime;
+    }
+
+
+    public String getChannel() {
+        return channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
     }
 }

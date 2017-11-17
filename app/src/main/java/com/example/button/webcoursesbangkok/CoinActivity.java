@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by body on 05/10/2017.
@@ -29,6 +31,7 @@ public class CoinActivity extends AppCompatActivity {
 
     private static final int SIGN_IN_REQUEST_CODE = 100;
     private static final String TAG = "Coin Activity";
+    private String mTicker;
     private TextView mSymbol;
     private FirebaseAuth mAuth;
     private FirebaseListAdapter<ChatMessage> adapter;
@@ -42,9 +45,9 @@ public class CoinActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        String symbol = getIntent().getStringExtra("Symbol");
+        mTicker = getIntent().getStringExtra("Symbol");
         mSymbol = (TextView) findViewById(R.id.coinActivityTitle);
-        mSymbol.setText(symbol);
+        mSymbol.setText(mTicker);
         final Button mMoon = (Button) findViewById(R.id.moonbutton);
         setUpEmojiButton(mMoon);
 
@@ -91,7 +94,7 @@ public class CoinActivity extends AppCompatActivity {
                     .setValue(new ChatMessage(input.getText().toString(),
                             FirebaseAuth.getInstance()
                                     .getCurrentUser()
-                                    .getUid())
+                                    .getUid(), mTicker)
                     );
 
             // Clear the input
@@ -177,12 +180,13 @@ public class CoinActivity extends AppCompatActivity {
             protected void populateView(View v, ChatMessage model, int position) {
                 // Get references to the views of message.xml
                 TextView messageText = (TextView)v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView)v.findViewById(R.id.message_user);
+                ImageView avatar = v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+
 
                 // Set their text
                 messageText.setText(model.getMessageText());
-                messageUser.setText(model.getMessageUser());
+                Picasso.with(CoinActivity.this).load("https://robohash.org/" + model.getMessageUser() + " .png").into(avatar);
 
                 // Format the date before showing it
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
